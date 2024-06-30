@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WorkSpaceDataSet" targetNamespace="http://tempuri.org/WorkSpaceDataSet.xsd" xmlns:mstns="http://tempuri.org/WorkSpaceDataSet.xsd" xmlns="http://tempuri.org/WorkSpaceDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WorkSpaceDBConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WorkSpaceDBConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WorkSpace.Properties.Settings.GlobalReference.Default.WorkSpaceDBConnection" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="applicationsTableAdapter" GeneratorDataComponentClassName="applicationsTableAdapter" Name="applications" UserDataComponentName="applicationsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkSpaceDBConnection (Settings)" DbObjectName="WorkSpace.dbo.applications" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FIOapp FROM dbo.applications</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FIOapp" DataSetColumn="FIOapp" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WorkSpaceDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="WorkSpaceDataSet" msprop:Generator_DataSetName="WorkSpaceDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="applications" msprop:Generator_RowEvHandlerName="applicationsRowChangeEventHandler" msprop:Generator_RowDeletedName="applicationsRowDeleted" msprop:Generator_RowDeletingName="applicationsRowDeleting" msprop:Generator_RowEvArgName="applicationsRowChangeEvent" msprop:Generator_TablePropName="applications" msprop:Generator_RowChangedName="applicationsRowChanged" msprop:Generator_RowChangingName="applicationsRowChanging" msprop:Generator_TableClassName="applicationsDataTable" msprop:Generator_RowClassName="applicationsRow" msprop:Generator_TableVarName="tableapplications" msprop:Generator_UserTableName="applications">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FIOapp" msprop:Generator_ColumnPropNameInRow="FIOapp" msprop:Generator_ColumnPropNameInTable="FIOappColumn" msprop:Generator_ColumnVarNameInTable="columnFIOapp" msprop:Generator_UserColumnName="FIOapp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
