@@ -53,8 +53,6 @@ namespace WorkSpace
             {
                 button4.Enabled = true;
                 button3.Enabled = true;
-                employeesBindingSource.ResetBindings(true);
-                comboBox2.Update();
                 textBox1.Text = $"{someEmployee.FIOemployee}";
                 dateTimePicker1.Value = someEmployee.dateofbEmployee;
                 textBox2.Text = $"{someEmployee.genderEmployee}";

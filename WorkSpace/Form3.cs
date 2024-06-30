@@ -39,13 +39,12 @@ namespace WorkSpace
                 if (radioButton1.Checked)
                 {
                     SetCollection();
-                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Create);
+                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Взыскание.txt", FileMode.Create);
                     StreamWriter encotext = new StreamWriter(enco);
-                    encotext.Write($"Уважаемая {this.Employee.FIOemployee}!\r\nХочется поблагодарить вас за Вашу деятельность в нашей компании. Благодаря Вам, мы вышли на качественно новый уровень и не падаем в грязь лицом в борьбе с конкурентами. Не остались незамеченными Ваши усилия и трудолюбие, которые Вы проявили в нашей организации. Благодарю Вас и желаю ещё большего развития Ваших навыков. Хочется верить, что наше сотрудничество продолжится ещё не один год.");
+                    encotext.Write($"Довожу до Вашего сведения, что сегодня, {DateTime.Today.ToShortDateString()}, {Employee.jobtitleEmployee.ToLower()} {Employee.FIOemployee} в {DateTime.Now.Hour} час. {DateTime.Now.Minute} мин. _________________(опишите обстоятельства, в соответствии с которыми работник совершил дисциплинарный проступок и его необходимо привлечь к дисциплинарной ответственности).");
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Взыскание применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
@@ -55,13 +54,12 @@ namespace WorkSpace
                 else if (radioButton2.Checked)
                 {
                     SetCollection();
-                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Create);
+                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Взыскание.txt", FileMode.Create);
                     StreamWriter encotext = new StreamWriter(enco);
-                    encotext.Write($"Согласно Положения о премировании и в связи с добросовестным исполнением обязанностей и перевыполнением плана ПРИКАЗЫВАЮ: Назначить премию сотруднику: {this.Employee.jobtitleEmployee} отдела {this.Employee.deptEmployee} {this.Employee.FIOemployee} в размере _____ рублей.");
+                    encotext.Write($"Об объявлении выговора\r\nВ связи с отсутствием {Employee.jobtitleEmployee.ToLower()} отдела {Employee.deptEmployee.ToLower()} {Employee.FIOemployee} {DateTime.Today.ToShortDateString()} на работе в период с __:__ (начала его рабочего дня) до __:__ и непредставлением им фактов, свидетельствующих об уважительности причин данного отсутствия, на основании положений ст. 192 и 193 ТК РФ приказываю:\r\nЗа нарушение трудовых обязанностей _________________(Причина) объявить работнику выговор.");
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Взыскание применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
@@ -70,20 +68,18 @@ namespace WorkSpace
                 }
                 else if (radioButton3.Checked)
                 {
-                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Create);
+                    FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Взыскание.txt", FileMode.Create);
                     StreamWriter encotext = new StreamWriter(enco);
-                    encotext.Write($"Награждается {this.Employee.FIOemployee}. С пожеланиями дальнейшего процветания и стабильности в Вашей деятельности, сил и упорства в служении делу. Наш коллектив неизменно будет Вам надежным и дружественным партнером.");
+                    encotext.Write($"ПРИКАЗ(распоряжение) \r\nо прекращении (расторжении) трудового \r\nдоговора с работником (увольнении) \r\nПрекратить действие трудового договора от {Employee.employmentDate.ToShortDateString()} , N___, \r\nуволить {Employee.employmentDate.ToShortDateString()} \r\n(ненужное зачеркнуть) \r\n{Employee.FIOemployee} \r\n_______________________\r\nструктурное подразделение \r\n__________________________________________________________________ \r\nоснование прекращения (расторжения) трудового договора (увольнения)");
                     encotext.Close();
                     enco.Close();
                     new SqlCommand($"delete from dbo.employees where passportEmployee = '{this.Employee.passportEmployee}'", someDB3.getConnect()).ExecuteNonQuery();
                     MessageBox.Show("Взыскание применено! Работник успешно уволен!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
                     this.parentForm.Activate();
                     this.parentForm.RefreshEmployee();
-                   
                 }
                 someDB3.closeConnect();
             }
@@ -94,12 +90,11 @@ namespace WorkSpace
                 {
                     this.Enabled = false;
                     new SqlCommand($"delete from dbo.employees where passportEmployee = '{this.Employee.passportEmployee}'", someDB3.getConnect()).ExecuteNonQuery();
-                    MessageBox.Show("Работник успешно уволен!");
+                    MessageBox.Show("Взыскание применено! Работник успешно уволен!");
                     this.Close();
                     this.parentForm.Enabled = true;
                     this.parentForm.Activate();
                     this.parentForm.RefreshEmployee();
-                    someDB3.closeConnect();
                 }
                 else
                 {

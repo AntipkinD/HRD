@@ -52,11 +52,10 @@ namespace WorkSpace
                     SetEncouragement();
                     FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Create);
                     StreamWriter encotext = new StreamWriter(enco);
-                    encotext.Write($"Уважаемая {this.FIOemployee}!\r\nХочется поблагодарить вас за Вашу деятельность в нашей компании. Благодаря Вам, мы вышли на качественно новый уровень и не падаем в грязь лицом в борьбе с конкурентами. Не остались незамеченными Ваши усилия и трудолюбие, которые Вы проявили в нашей организации. Благодарю Вас и желаю ещё большего развития Ваших навыков. Хочется верить, что наше сотрудничество продолжится ещё не один год.");
+                    encotext.Write($"Уважаемый(ая) {this.FIOemployee}!\r\nХочется поблагодарить вас за Вашу деятельность в нашей компании. Благодаря Вам, мы вышли на качественно новый уровень и не падаем в грязь лицом в борьбе с конкурентами. Не остались незамеченными Ваши усилия и трудолюбие, которые Вы проявили в нашей организации. Благодарю Вас и желаю ещё большего развития Ваших навыков. Хочется верить, что наше сотрудничество продолжится ещё не один год.");
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Поощрение применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
@@ -68,11 +67,10 @@ namespace WorkSpace
                     SetEncouragement();
                     FileStream enco = new FileStream("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Create);
                     StreamWriter encotext = new StreamWriter(enco);
-                    encotext.Write($"Согласно Положения о премировании и в связи с добросовестным исполнением обязанностей и перевыполнением плана ПРИКАЗЫВАЮ: Назначить премию сотруднику: {this.jobtitleEmployee} отдела {this.deptEmployee} {this.FIOemployee} в размере _____ рублей.");
+                    encotext.Write($"Согласно Положения о премировании и в связи с добросовестным исполнением обязанностей и перевыполнением плана ПРИКАЗЫВАЮ: Назначить премию сотруднику: {this.jobtitleEmployee.ToLower()} отдела {this.deptEmployee.ToLower()} {this.FIOemployee} в размере _____ рублей.");
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Поощрение применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
@@ -88,7 +86,6 @@ namespace WorkSpace
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Поощрение применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
@@ -104,7 +101,6 @@ namespace WorkSpace
                     encotext.Close();
                     enco.Close();
                     MessageBox.Show("Поощрение применено!");
-                    File.Open("D:\\VSWorks\\WorkSpace\\WorkSpace\\sys\\Поощрение.txt", FileMode.Open);
                     this.Enabled = false;
                     this.Close();
                     this.parentForm.Enabled = true;
